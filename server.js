@@ -14,19 +14,21 @@ const PORT = process.env.PORT || 3001
 
 // API routes
 
-// Get all notes
 app.get('/api/notes', (req, res) => {
+
+    // Get all notes
+
     // Responds with the current array of notes
     res.json(notes);
 });
-
-// Save a note
 app.post('/api/notes', (req, res) => {
 
-    // Gets the note to be saved from the post's body
+    // Save a new note
+
+    // Gets the note object to be saved from the post's body
     let note = req.body;
     
-    // Adds a unique id to the new note
+    // Adds a unique id to the note object
     note.id = uuidv4();
 
     // Adds the new note to the array
@@ -37,14 +39,14 @@ app.post('/api/notes', (req, res) => {
 
     res.json(note);
 });
-
-// Delete a single note by id
 app.delete('/api/notes/:id', (req, res) => {
+    
+    // Delete a single note by id
     
     const deleteId = req.params.id;
     let noteDeleted = false;
     
-    // Updates the notes array with all records except the one that matches the ID
+    // Updates the notes array in place  with all records except the one that matches the ID
     notes = notes.filter(note => { 
         if(note.id == deleteId) {
             // Sets the noteDeleted flag if the file is found 
@@ -68,18 +70,16 @@ app.delete('/api/notes/:id', (req, res) => {
 
 // HTML routes
 
-// Directs the /notes to then notes.html
 app.get('/notes', (req, res) => {
+    // Directs the /notes to then notes.html
     res.sendFile(path.join(__dirname, './public/notes.html'))
 })
-
-// Directs the address to the landing page
 app.get('/', (req, res) => {
+    // Directs the main url to the landing page
     res.sendFile(path.join(__dirname, './public/index.html'))
 });
-
-// Wildcard redirects to landing page
 app.get('*', (req, res) => {
+    // Wildcard allows all other redirects to the landing page
     res.sendFile(path.join(__dirname, './public/index.html'));
   });
 
