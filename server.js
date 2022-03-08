@@ -12,10 +12,9 @@ app.use(express.static('public'));
 
 const PORT = process.env.PORT || 3001
 
-
 // API routes
 
-//Get all notes
+// Get all notes
 app.get('/api/notes', (req, res) => {
     // Responds with the current array of notes
     res.json(notes);
@@ -92,6 +91,7 @@ app.get('*', (req, res) => {
         JSON.stringify({ notes: notes }, null, 2)
     );
   }
+
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}`)

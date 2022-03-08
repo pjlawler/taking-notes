@@ -1,3 +1,9 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "title": "Grocery List",
+      "text": "Eggs\nBread\nMilk\nJuice\nPizza",
+      "id": "ccb7ca52-ee05-4ad6-b331-db1ff2d486af"
+    }
+  ]
 }
