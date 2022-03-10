@@ -1,3 +1,14 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "title": "Grocery List",
+      "text": "Hamburger\nPasta\nEggs\nBread\nMilk\nJuice\nPizza",
+      "id": "103d7fcd-0c8c-4d96-a82b-b2995f9a6eba"
+    },
+    {
+      "title": "Call Jenny",
+      "text": "867-5309",
+      "id": "57f44c94-253d-4786-a619-71bcc88918b7"
+    }
+  ]
 }
